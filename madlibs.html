@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review by Christopher Lessig</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="nav">
+        <h1 id="title">Christopher Lessig - <i>"Mad Libs"</i></h1>
+    </div>
+
+        <main id="main">
+            <div id="imgDiv">
+                <div id="list">
+                    <div class="button">
+                <ul>
+                        <li><a href="index.html">HTML Review and Git Hosting</a></li>
+                </ul>
+                    </div>
+                    <div class="button">
+                <ul>
+                        <li><a href="numbertricks.html">Number Tricks</a></li>
+                </ul>
+                    </div>
+                    <div class="button">
+                <ul>
+                        <li><a href="numbertricksenhanced.html">Number Tricks Enhanced</a></li>
+                </ul>
+                    </div>
+                    <div class="page">
+                <ul>
+                        <li><a href="madlibs.html">MadLibs</a></li>
+                </ul>
+                    </div>
+                    <div class="button">
+                <ul>
+                        <li><a href="#">Debugging</a></li>
+                </ul>
+                    </div>
+                    <div class="button">
+                <ul>
+                        <li><a href="#">Test Score App</a></li>
+                </ul>
+                    </div>
+                    <div class="button">
+                <ul>
+                        <li><a href="#">Super Hero Cycling Banners</a></li>
+                </ul>
+                    </div>
+                    <div class="button">
+                <ul>
+                        <li><a href="#">The Changing Caterpillar</a></li>
+                </ul>
+                    </div>
+                    <div class="button">
+                <ul>
+                        <li><a href="#">Monster Mash</a></li>
+                </ul>
+                    </div>
+                    <div class="button">
+                <ul>
+                        <li><a href="#">Account Creation Form Validation</a></li>
+                </ul>
+                    </div>
+                    <div class="button">
+                <ul>
+                        <li><a href="#">Alien Sighting Form</a></li>
+                </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="padding">
+            
+                <div id = "wrapper">
+
+
+                    <div class="h1replica">Mad Libs</div>
+                    
+                
+                <input id="pluralNoun" placeholder="a plural noun"><br>
+                <input id="noun1" placeholder="a noun"><br>
+                <input id="noun2" placeholder="another noun"><br>
+                <input id="song" placeholder="song"><br>
+                <input id="verb" placeholder="verb"><br>
+                
+                <div style="padding: 1em">
+                <button id="info" type="button">Submit</button>
+                <button id="goBack" type="button">Go Back?</button>
+                </div>
+
+                <div id="gameText">
+                        <h3>Let's Play A little Game!</h3>
+                <script>      
+                    document.getElementById("goBack").style.visibility = "hidden";
+                    document.getElementById("info").onclick = function enteredText()
+                            {
+                                var pluralNoun = document.getElementById('pluralNoun').value;
+                                var noun1 = document.getElementById("noun1").value;
+                                var noun2 = document.getElementById("noun2").value;
+                                var song = document.getElementById("song").value;
+                                var verb = document.getElementById("verb").value;
+
+                                
+                                document.getElementById("gameText").innerHTML = "<p>You were looking around the house, only to find that you had too many <b>" + pluralNoun.toLowerCase() + "</b>.</p>" + "<p> This was a problem considering you really need a <b>" + noun1.toLowerCase() + "</b>.</p>" + "<p> I guess a <b>" + noun2.toLowerCase() + "</b> will have to do.</p>" + "<p> The lyrics to <b>" + song.toLowerCase() + "</b> kept going through your mind. If only that was helpful right about now.</p>" + "<p> You might have to do some more <b>" + verb.toLowerCase() + "</b> before you can go swimming, but that's up to you.</p>";
+                                document.getElementById("goBack").style.visibility = "visible";
+                                document.getElementById("info").style.visibility = "hidden";
+                            }
+                    document.getElementById("goBack").onclick = function reset()
+                            {
+                                document.getElementById("goBack").style.visibility = "hidden";
+                                document.getElementById("info").style.visibility = "visible";
+                                document.getElementById("gameText").innerHTML = "";
+                            }
+                </script>
+                                
+                </div>
+                </div>
+            
+            <div class="h1replica">Explanation / Walthrough</div>
+                Well this project was a fun one. Starting off I generally externally linked my work from other coding languages so I decided to swtich things up a bit and 
+                code this one right into the html document. I had a few different approaches towards this, most of them using if statements to try and toggle the various coniditons. However after a little trial and error and I found this to be the best method.
+                I went a little bit against in the grain in terms of the buttons. As I'm sure you noticed I used a toggle system of the buttons. When the submit button is clicked it's visibility goes to hidden while the the go back button becomes visable and vice versa.
+                That just felt like a more dynamic approach towards the project. I used two functions for this. One for when the submit button was clicked, and another for when the go back button was clicked. This acted as my toggle system.
+                The goBack button function simply reswapped the visibility of the buttons and wrote some empty innerHTML code to remove what was originally there. The variables themselves would be overwritten when the submit button was clicked for a second time
+                so I didn't bother trying to nullify the variables. I also taken the liberty of adding some HTML in the when writing in the innerHTML in the submit button function to include some bold tags.
+                This was just to emphasis what characters being displayed are the ones the user has entered. I used the toLowerCase method in this innerHTML string accompanying the variables as they were placed to convert all the answers over to string.
+                I didn't include a method of verification so if the input boxes are blank the function will still run, however I imagine it would be  a simple if statement, something like 
+                <p>if(var1 & var2 & var3 & var4 & var5 != "")</p>
+                <p>{</p>
+                    <p>     Then do a bunch of Mad Lib stuff! </p>
+                        <p> }</p>
+                            <p>To me half the fun is not knowing what the sentence is going to be before entering the words.</p>
+        </div>
+        </main>
+    
+</body>
+</html>
